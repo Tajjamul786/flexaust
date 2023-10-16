@@ -15,11 +15,11 @@ import {
     View,
     StyleSheet,
     Text,
-    Dimensions
+    Dimensions,
+    Image
 } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import HTMLView from 'react-native-htmlview';
-// import FastImage from 'react-native-fast-image'
 
 export default class ProductCard extends Component {
 
@@ -85,8 +85,8 @@ export default class ProductCard extends Component {
             prodImage: {
                 width: imageHeight,
                 height: imageHeight,
-                aspectRatio: 1,
-                alignSelf: "center"
+                alignSelf: "center",
+                objectFit:'fill'
             },
             cardDetail: {
                 marginHorizontal: 15,
@@ -105,7 +105,7 @@ export default class ProductCard extends Component {
             prodHtmlPara: {
                 fontSize: paraFontSize,
                 lineHeight: lineHeight,
-
+                color: "#000000",
                 marginTop: 5,
                 paddingBottom: 20,
                 paddingRight: prodHtmlParaPaddingRight
@@ -145,10 +145,21 @@ export default class ProductCard extends Component {
                 style={cardStyles.container}
                 activeOpacity={1}
             >
-                {/* <FastImage
-                    style={cardStyles.prodImage}
-                    source={{ uri: item["Image URL"] }}
-                /> */}
+                <View style={{
+                    height: imageHeight,
+                    width: imageHeight,
+                    backgroundColor: "#cccccc"
+                }}>
+                    {
+                        item["Image URL"] ?
+                        <Image
+                            source={{ uri: item["Image URL"] }}
+                            style={cardStyles.prodImage}
+                        />:
+                        <Text style={{fontSize:12,color:"#ffffff92",textAlign:'center',marginTop:40}}>No Image</Text>
+                    }
+                </View>
+
                 <View style={cardStyles.cardDetail}>
                     <HTMLView value={`<p>${item.Name}</p>`}
 

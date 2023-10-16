@@ -26,21 +26,20 @@ import { APIURL } from '../Config/config';
 import HTMLView from 'react-native-htmlview';
 import { decodeHtml } from '../Config/CommonFunctions';
 import ProductList from './ProductList';
+import { AlphabetList } from 'react-native-section-alphabet-list';
 
 export default class AppSolution extends PureComponent {
     constructor() {
         super();
         this.state = {
             data: [],
-            sorted: {},
+            sorted: [],
             name: '',
-
         }
     }
 
     componentDidMount() {
         // Requets for market App data
-        // let { navigation } = this.props;
         axios.get(APIURL + "?data=market-applications")
             .then(res => {
                 this.setState({ data: res.data["market applications"] });
@@ -48,58 +47,31 @@ export default class AppSolution extends PureComponent {
             }).catch(err => {
                 alert("Solution by Application component did not load")
             })
-        // navigation.addListener('focus', () => {
-        // })
     }
 
     //Sort the data in alphabatic sections
 
     sortData(data) {
 
-        let listFormat = {
-            A: [],
-            B: [],
-            C: [],
-            D: [],
-            E: [],
-            F: [],
-            G: [],
-            H: [],
-            I: [],
-            J: [],
-            K: [],
-            L: [],
-            M: [],
-            N: [],
-            O: [],
-            P: [],
-            Q: [],
-            R: [],
-            S: [],
-            T: [],
-            U: [],
-            V: [],
-            W: [],
-            X: [],
-            Y: [],
-            Z: [],
-        }
-
-        data.map((item, index) => {
+        let listFormat = []
+        let sortedData = data.sort((a, b) => a - b);
+        sortedData.map((item, index) => {
             if (Dimensions.get('screen').width >= 600 && Dimensions.get('screen').height >= 600) {
                 if (index == 0) {
-                    this.setState({ name: item.name })
-
+                    this.setState({ value: item.name, key: index })
                 }
             }
-            let charctr = item.name[0].toUpperCase()
-            listFormat[charctr] = [...listFormat[charctr], item]
+
+            listFormat.push({
+                value: item.name,
+                key: index
+            })
         })
         this.setState({ sorted: listFormat })
 
     }
     //List Section Item Component
-    renderItem = ({ item }) => {
+    renderItem = (item) => {
         const { navigation } = this.props;
         let FontSize = 16;
         let textPadding = 10;
@@ -113,16 +85,19 @@ export default class AppSolution extends PureComponent {
                 fontSize: FontSize
             }
         })
-        let firstChar = item.name[0].toUpperCase();
-        let lenghtArr = this.state.sorted[firstChar].length;
-        let lastValue = this.state.sorted[firstChar][lenghtArr - 1].name;
+        let newAlpha = true
+        if (this.state.sorted[item.key + 1]) {
+            let currentChar = item.value[0]
+            let prevChar = this.state.sorted[item.key + 1].value[0]
+            newAlpha = currentChar === prevChar ? true : false
+        }
         return (
             <TouchableOpacity
                 onPress={() => {
                     if (Dimensions.get('screen').width >= 600 && Dimensions.get('screen').height >= 600) {
-                        this.setState({ name: item.name })
+                        this.setState({ name: item.value })
                     } else {
-                        navigation.navigate('ProductList', { type: 'appSol', value: item.name, mainTitle: "Product by Application" })
+                        navigation.navigate('ProductList', { type: 'appSol', value: item.value, mainTitle: "Product by Application" })
                     }
                 }}
             >
@@ -130,17 +105,17 @@ export default class AppSolution extends PureComponent {
                     marginHorizontal: 20,
                     padding: textPadding,
                     borderBottomColor: '#ffffff',
-                    borderBottomWidth: item.name !== lastValue ? 1 : 0,
-                    backgroundColor: item.name == this.state.name ? 'rgba(4, 4, 4,0.302)' : 'transparent'
+                    borderBottomWidth: !newAlpha ? 0 : 1,
+                    backgroundColor: item.value == this.state.value ? 'rgba(4, 4, 4,0.302)' : 'transparent'
                 }}>
 
-                    <HTMLView value={`<p>${decodeHtml(item.name)}</p>`} stylesheet={listItemStyle} />
+                    <HTMLView value={`<p>${decodeHtml(item.value)}</p>`} stylesheet={listItemStyle} />
                 </View>
             </TouchableOpacity>
         )
     }
     //List Section Header Component
-    renderSectionHeader = ({ section: { title } }) => {
+    renderSectionHeader = ({ title }) => {
         let FontSize = 16;
         if (Dimensions.get('screen').width >= 600 && Dimensions.get('screen').height >= 600) {
             FontSize = 20;
@@ -148,7 +123,7 @@ export default class AppSolution extends PureComponent {
         return (
             <>
                 {
-                    this.state.sorted[title].length > 0 ?
+                    this.state.sorted.length > 0 ?
                         < View style={{
                             paddingLeft: 10,
                             backgroundColor: 'rgba(4, 4, 4,0.302)',
@@ -193,15 +168,15 @@ export default class AppSolution extends PureComponent {
                                 marginHorizontal: 20,
                                 alignSelf: "flex-start"
                             }}>
-                                {/* <AlphabetSectionList
-
-                                    //Used AlphabetSectionList Library for alphabetic scroll
-                                    data={this.state.sorted} //pass the sorted data
-                                    renderItem={this.renderItem} // pass the item component
-                                    // custom section header
-                                    renderSectionHeader={this.renderSectionHeader} // pass the header component
-
-                                /> */}
+                                <AlphabetList
+                                    data={this.state.sorted}
+                                    indexLetterStyle={{
+                                        color: '#ffffff',
+                                        fontSize: (Dimensions.get('screen').width >= 600 && Dimensions.get('screen').height >= 600) ? 16 : 12,
+                                    }}
+                                    renderCustomItem={this.renderItem}
+                                    renderCustomSectionHeader={this.renderSectionHeader}
+                                />
                             </View>
                             <View style={{
                                 flex: 1,
@@ -211,16 +186,14 @@ export default class AppSolution extends PureComponent {
                             </View>
                         </View>
                         :
-
-                        <AlphabetSectionList
-
-                            //Used AlphabetSectionList Library for alphabetic scroll
-
-                            data={this.state.sorted} //pass the sorted data
-                            renderItem={this.renderItem} // pass the item component
-                            // custom section header
-                            renderSectionHeader={this.renderSectionHeader} // pass the header component
-
+                        <AlphabetList
+                            data={this.state.sorted}
+                            indexLetterStyle={{
+                                color: '#ffffff',
+                                fontSize: (Dimensions.get('screen').width >= 600 && Dimensions.get('screen').height >= 600) ? 16 : 12,
+                            }}
+                            renderCustomItem={this.renderItem}
+                            renderCustomSectionHeader={this.renderSectionHeader}
                         />
 
                 }

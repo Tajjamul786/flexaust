@@ -137,7 +137,8 @@ export default class WhatsNewDetail extends Component {
                         onPress={() => { this.setState({ rating: i }) }}
                     >
                         <Image
-                            source={require('../assets/images/detail/icon-star-yellow.png')} style={{
+                            source={require('../assets/images/detail/icon-star-yellow.png')}
+                             style={{
                                 height: 20,
                                 width: 20,
                                 marginRight: 5

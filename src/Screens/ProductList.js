@@ -21,7 +21,6 @@ import Header from '../Components/Header';
 import { ProductContextData } from '../Components/ProductContext';
 import ProductCard from '../Components/ProductCard';
 
-
 export default class ProductList extends Component {
 
     static contextType = ProductContextData;
