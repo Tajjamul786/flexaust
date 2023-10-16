@@ -49,6 +49,7 @@ const NavigationScreens = () => {
                 }}
                 drawerContent={(props) => <SideBar {...props} />}
                 initialRouteName="Splash"
+                backBehavior='history'
                 screenOptions={{
                     headerShown: false
                 }}
