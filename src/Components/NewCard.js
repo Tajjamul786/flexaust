@@ -16,10 +16,11 @@ import {
     Text,
     TouchableWithoutFeedback,
     StyleSheet,
-    Dimensions, Image
+    Dimensions
 } from 'react-native';
 import { decodeHtml, decodeDate } from '../Config/CommonFunctions';
 import HTMLView from 'react-native-htmlview';
+import Images from './shared/Images';
 
 class NewCard extends Component {
 
@@ -134,25 +135,9 @@ class NewCard extends Component {
                     onLayout={this.onLayout}
                     style={cardStyle.card}>
                     <Text style={cardStyle.newTag}>NEW</Text>
-                    <View
-                        style={{ width: "100%", height: 200, backgroundColor: "#cccccc" }}
-                    >
-                        {
-                            !!this.state.Item["Image Thumb URL"]
-                                ?
-                                <Image
-                                    style={cardStyle.cardImage}
-                                    source={{ uri: this.state.Item["Image Thumb URL"] }}
-                                />
-                                :
-                                <Text style={{
-                                    color: "#ffffff90",
-                                    fontSize: 18,
-                                    textAlign: 'center',
-                                    marginTop: 100
-                                }}>No Thumbnail available</Text>
-                        }
-                    </View>
+                    <Images
+                        source={this.state.Item["Image Thumb URL"]}
+                    />
                     <View style={cardStyle.cardFooter}>
                         <Text style={cardStyle.category}>{cat.toString().toUpperCase()}</Text>
                         <HTMLView value={`<p>${title}</p>`} stylesheet={HtmlStyle} />

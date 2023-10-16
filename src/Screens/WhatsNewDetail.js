@@ -30,7 +30,7 @@ import { WEBURL } from "../Config/config";
 import HTMLView from 'react-native-htmlview';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { addProduct, productById, deleteProduct } from '../Config/DataBase';
-// import FastImage from 'react-native-fast-image'
+import Images from '../Components/shared/Images';
 
 export default class WhatsNewDetail extends Component {
 
@@ -313,25 +313,10 @@ export default class WhatsNewDetail extends Component {
                         ref={this.scrollRef}
                     >
                         <Text style={detailStyle.newTag}>NEW</Text>
-                        <View
-                            style={{ width: "100%", height: 200, backgroundColor: "#cccccc" }}
-                        >
-                            {
-                                !!item["Image Thumb URL"]
-                                    ?
-                                    <Image
-                                        style={detailStyle.image}
-                                        source={{ uri: item["Image Large URL"] }}
-                                    />
-                                    :
-                                    <Text style={{
-                                        color: "#ffffff90",
-                                        fontSize: 18,
-                                        textAlign: 'center',
-                                        marginTop: 100
-                                    }}>No Thumbnail available</Text>
-                            }
-                        </View>
+
+                        <Images
+                            source={item["Image Large URL"]}
+                        />
                         <Text style={detailStyle.category}>{cat.toString().toUpperCase()}</Text>
 
                         <HTMLView value={`<p>${title}</p>`} stylesheet={headingHtml} />
