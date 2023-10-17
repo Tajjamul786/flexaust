@@ -26,13 +26,8 @@ export default class ProductCard extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            item: {}
+            item: props.item
         }
-    }
-
-    componentDidMount() {
-        const { item } = this.props;
-        this.setState({ item: item })
     }
 
     render() {

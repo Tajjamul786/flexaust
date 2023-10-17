@@ -43,11 +43,11 @@ export default class ProdDetail extends Component {
     componentDidMount() {
 
         //Change the data on focusing on the component
-
         const { navigation } = this.props
         navigation.addListener('focus', () => {
             let { detURL } = this.props.route.params
 
+            this.setState({ product: {}, productID: "" })
             //Get the data of the product by using the URL fetched by the component props
 
             axios.get(detURL)

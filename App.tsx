@@ -13,21 +13,22 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import NavigationScreens from './src/Components/NavigationScreens';
 import ProductContext from './src/Components/ProductContext';
-// import ErrorBoundary from 'react-native-error-boundary'
-// import { Alert } from 'react-native';
-// import { AlertDialog } from 'native-base';
+import ErrorBoundary from 'react-native-error-boundary'
+import { Alert } from 'react-native';
 
-//unexpected exception handler
-// const CustomFallback = () => (
-//   // AlertDialog("Something unexpected happened. Please close the App and try again")
-// )
+// unexpected exception handler
+const CustomFallback = () => (
+  Alert.alert("Something unexpected happened. Please close the App and try again")
+)
 
 const App = () => {
 
   return (
-    
+
     <ProductContext>
-         <NavigationScreens />
+      <ErrorBoundary FallbackComponent={CustomFallback as any}>
+        <NavigationScreens />
+      </ErrorBoundary>
     </ProductContext>
   );
 };

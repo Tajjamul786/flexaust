@@ -65,7 +65,7 @@ export default class ProdSpecs extends Component {
                 width: '45%',
                 textAlign: "right",
                 padding: 10,
-
+                color:"#000000"
 
             },
             rightText: {

@@ -39,10 +39,10 @@ export default class ProdSummary extends Component {
                 <View key={index} style={{ marginTop: -30 }}>
                     <View style={{ flexDirection: 'row' }}>
                         <View style={{ flexDirection: 'column', marginLeft: 20, width: 15 }}>
-                            <Text style={{ fontSize: paraFontSize, fontWeight: "700" }}>{'\u2022'}</Text>
+                            <Text style={{ fontSize: paraFontSize, fontWeight: "700" ,color:"#000000"}}>{'\u2022'}</Text>
                         </View>
                         <View style={{ flexDirection: 'column', width: '90%' }}>
-                            <Text style={{ fontSize: paraFontSize }}>{defaultRenderer(node.children, parent)}</Text>
+                            <Text style={{ fontSize: paraFontSize,color:"#000000" }}>{defaultRenderer(node.children, parent)}</Text>
                         </View>
                     </View>
                 </View>
@@ -93,12 +93,12 @@ export default class ProdSummary extends Component {
                 fontSize: headingFontSize,
                 lineHeight: 35,
                 fontWeight: "700",
-
             },
             p: {
                 fontSize: paraFontSize,
                 marginBottom: 10,
-                lineHeight: paraLineHeight
+                lineHeight: paraLineHeight,
+                color:"#000000"
             },
             ul: {
                 padding: 10

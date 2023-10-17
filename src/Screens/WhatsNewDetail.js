@@ -30,7 +30,7 @@ import { WEBURL } from "../Config/config";
 import HTMLView from 'react-native-htmlview';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import { addProduct, productById, deleteProduct } from '../Config/DataBase';
-import Images from '../Components/shared/Images';
+import Images, { LargeImages } from '../Components/shared/Images';
 
 export default class WhatsNewDetail extends Component {
 
@@ -138,7 +138,7 @@ export default class WhatsNewDetail extends Component {
                     >
                         <Image
                             source={require('../assets/images/detail/icon-star-yellow.png')}
-                             style={{
+                            style={{
                                 height: 20,
                                 width: 20,
                                 marginRight: 5
@@ -315,7 +315,7 @@ export default class WhatsNewDetail extends Component {
                     >
                         <Text style={detailStyle.newTag}>NEW</Text>
 
-                        <Images
+                        <LargeImages
                             source={item["Image Large URL"]}
                         />
                         <Text style={detailStyle.category}>{cat.toString().toUpperCase()}</Text>
@@ -336,10 +336,10 @@ export default class WhatsNewDetail extends Component {
                                         <View key={index} style={{ marginTop: index === 0 ? 10 : 0 }}>
                                             <View style={{ flexDirection: 'row' }}>
                                                 <View style={{ flexDirection: 'column', marginLeft: 20, width: 15 }}>
-                                                    <Text style={{ fontSize: paraFontSize, fontWeight: "700" }}>{'\u2022'}</Text>
+                                                    <Text style={{ fontSize: paraFontSize, fontWeight: "700", color: "#000000" }}>{'\u2022'}</Text>
                                                 </View>
                                                 <View style={{ flexDirection: 'column', width: '90%' }}>
-                                                    <Text style={{ fontSize: paraFontSize, color: '#333333' }}>{defaultRenderer(node.children, parent)}</Text>
+                                                    <Text style={{ fontSize: paraFontSize, color: '#333333', color: "#000000" }}>{defaultRenderer(node.children, parent)}</Text>
                                                 </View>
                                             </View>
                                         </View>

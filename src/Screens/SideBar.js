@@ -193,7 +193,7 @@ class SideBar extends Component {
                                 style={DrawerStyle.itemtext}
                             >Contact & Support</Text>
                         </TouchableOpacity>
-                        <Text style={DrawerStyle.version}>1.1.4+21</Text>
+                        <Text style={DrawerStyle.version}>1.1.5</Text>
                     </ScrollView>
                 </View>
             </ScreenBackground>

@@ -59,11 +59,13 @@ export default class Contact extends Component {
             heading: {
                 fontSize: FontSize,
                 fontWeight: "700",
-                marginVertical: 10
+                marginVertical: 10,
+                color:"#000000"
             },
             para: {
                 fontSize: FontSize,
-                lineHeight: LineHeight
+                lineHeight: LineHeight,
+                color: "#000000"
             },
             link: {
                 color: "blue",
@@ -99,7 +101,7 @@ export default class Contact extends Component {
                                 <Text style={contactStyle.link}>from here</Text>
                             </TouchableWithoutFeedback>
                             {". "}
-                        Questions will be addressed within one business day. If you require immediate support please call: (800) 343 – 0428.
+                            Questions will be addressed within one business day. If you require immediate support please call: (800) 343 – 0428.
                         </Text>
                         <Text style={{ ...contactStyle.para, marginVertical: 10 }}>Please also refer to the following support resources:</Text>
                         <TouchableWithoutFeedback

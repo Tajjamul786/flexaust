@@ -16,11 +16,12 @@ import React, { Component } from 'react';
 import {
     View,
     StyleSheet,
-    Dimensions
+    Dimensions,
+    TouchableOpacity
 } from 'react-native';
 import ScreenBacground from '../Components/ScreenBackground';
 import Header from '../Components/Header';
-// import { AccordionList } from "accordion-collapse-react-native";
+import Accordian from '../Components/shared/accordian';
 import HTMLView from 'react-native-htmlview';
 import { APIURL } from '../Config/config';
 import axios from 'axios';
@@ -108,7 +109,7 @@ export default class FindProduct extends Component {
                 {
                     item.subcategories.map((subcat, index) => {
                         return (
-                            <TouchableWithoutFeedback
+                            <TouchableOpacity
                                 onPress={() => {
                                     if (Dimensions.get('screen').width >= 600 && Dimensions.get('screen').height >= 600) {
                                         this.setState({ cat: subcat.name })
@@ -134,7 +135,7 @@ export default class FindProduct extends Component {
                                     />
 
                                 </View>
-                            </TouchableWithoutFeedback>
+                            </TouchableOpacity>
                         )
                     })
                 }
@@ -160,16 +161,12 @@ export default class FindProduct extends Component {
                                 marginHorizontal: 20,
                                 alignSelf: "flex-start"
                             }}>
-                                {/* <AccordionList
-
-                                    //Used AccordionList Library for showing accordion
-
+                                <Accordian
                                     list={this.state.categories} // Pass the data
                                     header={this._head} // Pass the header component
                                     body={this._body} //Pass the body component
-                                    keyExtractor={item => `${item.name}`} // Unique Key is the Name for now
                                     expandedIndex={0} //Default open first accordion
-                                /> */}
+                                />
                             </View>
                             <View style={{
                                 flex: 1,
@@ -180,16 +177,12 @@ export default class FindProduct extends Component {
                         </View>
                         :
                         <View style={{ marginHorizontal: 20 }}>
-                            {/* <AccordionList
-
-                                //Used AccordionList Library for showing accordion
-
+                            <Accordian
                                 list={this.state.categories} // Pass the data
                                 header={this._head} // Pass the header component
                                 body={this._body} //Pass the body component
-                                keyExtractor={item => `${item.name}`} // Unique Key is the Name for now
                                 expandedIndex={0} //Default open first accordion
-                            /> */}
+                            />
                         </View>
                 }
 

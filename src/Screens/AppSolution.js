@@ -22,7 +22,6 @@ import ScreenBackground from '../Components/ScreenBackground';
 import Header from '../Components/Header';
 import axios from 'axios';
 import { APIURL } from '../Config/config';
-// import AlphabetSectionList from 'react-native-alphabet-sectionlist';
 import HTMLView from 'react-native-htmlview';
 import { decodeHtml } from '../Config/CommonFunctions';
 import ProductList from './ProductList';
@@ -67,7 +66,10 @@ export default class AppSolution extends PureComponent {
                 key: index
             })
         })
-        this.setState({ sorted: listFormat })
+        this.setState({
+            name: listFormat[0].value,
+            sorted: listFormat
+        })
 
     }
     //List Section Item Component
@@ -172,10 +174,19 @@ export default class AppSolution extends PureComponent {
                                     data={this.state.sorted}
                                     indexLetterStyle={{
                                         color: '#ffffff',
+                                        height: 30,
                                         fontSize: (Dimensions.get('screen').width >= 600 && Dimensions.get('screen').height >= 600) ? 16 : 12,
                                     }}
                                     renderCustomItem={this.renderItem}
                                     renderCustomSectionHeader={this.renderSectionHeader}
+                                    indexLetterContainerStyle={{
+                                        height: 30,
+                                        width: 40,
+                                    }}
+                                    indexContainerStyle={{
+                                        width: 30,
+                                        paddingLeft:15
+                                    }}
                                 />
                             </View>
                             <View style={{
@@ -194,6 +205,13 @@ export default class AppSolution extends PureComponent {
                             }}
                             renderCustomItem={this.renderItem}
                             renderCustomSectionHeader={this.renderSectionHeader}
+                            indexLetterContainerStyle={{
+                                height: 20
+                            }}
+                            indexContainerStyle={{
+                                width: 30,
+                                paddingLeft:15
+                            }}
                         />
 
                 }

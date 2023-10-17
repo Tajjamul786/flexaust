@@ -53,7 +53,8 @@ export default class ProdApplications extends Component {
                 fontSize: FontSize,
                 paddingVertical: 10,
                 paddingHorizontal: 7,
-                lineHeight: 22
+                lineHeight: 22,
+                color:'#000000'
             },
 
         })

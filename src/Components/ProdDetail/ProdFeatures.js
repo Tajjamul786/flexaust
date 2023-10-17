@@ -48,10 +48,10 @@ export default class ProdFeatures extends Component {
                 <View key={index} style={{ marginTop: -15 }}>
                     <View style={{ flexDirection: 'row' }}>
                         <View style={{ flexDirection: 'column', marginLeft: 20, width: bulletWidth }}>
-                            <Text style={{ fontSize: paraFontSize, fontWeight: "700" }}>{'\u2022'}</Text>
+                            <Text style={{ fontSize: paraFontSize, fontWeight: "700",color:"#000000" }}>{'\u2022'}</Text>
                         </View>
                         <View style={{ flexDirection: 'column', width: '90%' }}>
-                            <Text style={{ fontSize: paraFontSize }}>{defaultRenderer(node.children, parent)}</Text>
+                            <Text style={{ fontSize: paraFontSize,color:"#000000" }}>{defaultRenderer(node.children, parent)}</Text>
                         </View>
                     </View>
                 </View>
@@ -95,7 +95,8 @@ export default class ProdFeatures extends Component {
                 fontWeight: "700",
                 paddingHorizontal: 10,
                 marginBottom: 10,
-                marginTop: 10
+                marginTop: 10,
+                color:"#000000"
             },
 
         })
@@ -110,14 +111,15 @@ export default class ProdFeatures extends Component {
 
             },
             p: {
-                fontSize: paraFontSize
+                fontSize: paraFontSize,
+                color:'#000000'
             },
             ul: {
                 padding: 10
             },
             li: {
                 fontSize: paraFontSize,
-
+                color:"#000000"
             }
         });
 
@@ -154,12 +156,14 @@ export default class ProdFeatures extends Component {
                                             key={key}>
                                             <Text style={{
                                                 paddingHorizontal: 10,
-                                                fontSize: paraFontSize
+                                                fontSize: paraFontSize,
+                                                color:"#000000"
                                             }}>{'\u2022' + " " + key.toUpperCase()}: </Text>
                                             <View>
                                                 <HTMLView value={`<p>${decodeHtml(value)}</p>`} stylesheet={StyleSheet.create({
                                                     p: {
-                                                        fontSize: paraFontSize
+                                                        fontSize: paraFontSize,
+                                                        color:"#000000"
                                                     }
                                                 })} />
                                             </View>
