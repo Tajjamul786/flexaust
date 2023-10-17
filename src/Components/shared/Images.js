@@ -33,7 +33,7 @@ function Images({ source }) {
 export function LargeImages({ source }) {
   return (
     <View
-      style={{ width: "100%", minHeight: !source ? 200 : 'auto', height: 'auto', backgroundColor: "#cccccc" }}
+      style={{ width: "100%", height: 'auto', backgroundColor: "#cccccc" }}
     >
       {
         !!source
@@ -48,12 +48,16 @@ export function LargeImages({ source }) {
             source={{ uri: source }}
           />
           :
-          <Text style={{
-            color: "#ffffff90",
-            fontSize: 18,
-            textAlign: 'center',
-            marginTop: 100
-          }}>No Thumbnail available</Text>
+          <View
+            style={{ width: "100%", height: 200 }}
+          >
+            <Text style={{
+              color: "#ffffff90",
+              fontSize: 18,
+              textAlign: 'center',
+              marginTop: 90,
+            }}>No Thumbnail Available</Text>
+          </View>
       }
     </View>
   )

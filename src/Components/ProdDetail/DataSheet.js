@@ -58,6 +58,7 @@ export default class DataSheet extends Component {
                 alignSelf: "center"
             }
         })
+        console.log(PageURL)
         return (
 
             <SafeAreaView style={Style.container}>
@@ -73,8 +74,19 @@ export default class DataSheet extends Component {
                 </View>
 
 
-                <Pdf source={{ uri: PageURL }}
+                <Pdf
+                    trustAllCerts={false}
+                    source={{ uri: PageURL }}
                     style={{ flex: 1, padding: 15 }}
+                    onLoadComplete={(numberOfPages, filePath) => {
+                        console.log(`Number of pages: ${numberOfPages}`);
+                    }}
+                    onPageChanged={(page, numberOfPages) => {
+                        console.log(`Current page: ${page}`);
+                    }}
+                    onError={(error) => {
+                        console.log(error);
+                    }}
                 />
 
 

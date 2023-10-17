@@ -108,7 +108,7 @@ export default class AppSolution extends PureComponent {
                     padding: textPadding,
                     borderBottomColor: '#ffffff',
                     borderBottomWidth: !newAlpha ? 0 : 1,
-                    backgroundColor: item.value == this.state.value ? 'rgba(4, 4, 4,0.302)' : 'transparent'
+                    backgroundColor: (Dimensions.get('screen').width >= 600 && Dimensions.get('screen').height >= 600) && item.value == this.state.name ? 'rgba(4, 4, 4,0.302)' : 'transparent'
                 }}>
 
                     <HTMLView value={`<p>${decodeHtml(item.value)}</p>`} stylesheet={listItemStyle} />
@@ -185,7 +185,7 @@ export default class AppSolution extends PureComponent {
                                     }}
                                     indexContainerStyle={{
                                         width: 30,
-                                        paddingLeft:15
+                                        paddingLeft: 15
                                     }}
                                 />
                             </View>
@@ -210,7 +210,7 @@ export default class AppSolution extends PureComponent {
                             }}
                             indexContainerStyle={{
                                 width: 30,
-                                paddingLeft:15
+                                paddingLeft: 15
                             }}
                         />
 

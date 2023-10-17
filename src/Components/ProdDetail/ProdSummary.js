@@ -71,6 +71,7 @@ export default class ProdSummary extends Component {
             separatorheight = 2;
             HeadingMarginBottom = 20;
             paraFontSize = 20;
+            paraLineHeight = 24;
         }
 
         let detStyle = StyleSheet.create({
@@ -105,7 +106,7 @@ export default class ProdSummary extends Component {
             },
             li: {
                 fontSize: paraFontSize,
-
+                color:"#000000"
             }
         });
 
