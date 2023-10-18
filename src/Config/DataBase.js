@@ -10,156 +10,95 @@
  * Created at     : 2020-09-17 15:11:22 
  * Last modified  : 2020-10-02 11:43:16
  */
-
-// import SQLite from "react-native-sqlite-storage";
-
-// SQLite.enablePromise(true);
-
-/*
-* Database file to store favorite
-* It stores the list on local device
-* Returns the promise
-*/
-
-//Create and find the database
-
-export const createTable = () => {
-    // let db;
-    // return new Promise((resolve) => {
-    //     SQLite.echoTest()
-    //         .then(() => {
-
-    //             SQLite.openDatabase({ name: "FavoriteDB", createFromLocation: "~FavoriteDB.sqlite" }).then(DB => {
-    //                 db = DB;
-    //                 db.executeSql('SELECT * FROM favorite ').then(() => {
-    //                 }).catch((error) => {
-    //                     db.transaction((tx) => {
-    //                         tx.executeSql('CREATE TABLE IF NOT EXISTS favorite(id INTEGER, type VARCHAR(20), item VARCHAR(255))');
-    //                     }).then(() => {
-    //                     })
-    //                 });
-    //                 resolve(db);
-    //             }).catch(error => {
-    //                 alert(error)
-    //             })
-    //         })
-
-    // });
-}
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Alert } from "react-native";
 
 //List all the favorite products stored
-export const listProduct = () => {
-    // return new Promise((resolve) => {
-    //     const products = [];
-    //     createTable().then((db) => {
-    //         db.transaction((tx) => {
-    //             tx.executeSql('SELECT DISTINCT id, type ,item FROM favorite', []).then(([tx, results]) => {
-    //                 var len = results.rows.length;
-    //                 for (let i = 0; i < len; i++) {
-    //                     let row = results.rows.item(i);
-    //                     const { id, item, type } = row;
-    //                     products.push({
-    //                         id,
-    //                         item,
-    //                         type
-    //                     });
-    //                 }
-    //                 resolve(products);
-    //             });
-    //         }).then((result) => {
-    //             closeDatabase(db);
-    //         }).catch(err => {
-    //             closeDatabase(db);
-    //         })
-    //     }).catch(error => {
-    //         console.log("echoTest failed - plugin not functional");
-    //     });
-    // });
+
+export const listProduct = async () => {
+    try {
+        let listItems = await AsyncStorage.getItem('favourite')
+        listItems = listItems ? JSON.parse(listItems) : {}
+        return listItems
+    } catch (err) {
+        Alert.alert('Something went wrong. Try again.')
+    }
 }
-//Close the Data base
-export const closeDatabase = (db) => {
-    // if (db) {
-    //     db.close()
-    //         .then(status => {
-    //         }).catch(err => {
-    //             console.log("close error")
-    //         })
 
-    // } else {
-    // }
-};
-
-
-const errorCB = (error) => {
-}
 
 //Add the product to favorite
 
-export const addProduct = (id, type, item) => {
-    // return new Promise((resolve) => {
-    //     createTable().then((db) => {
-    //         db.transaction((tx) => {
-    //             tx.executeSql('INSERT INTO favorite (id,type,item) VALUES (?, ?, ?)', [id, type, item]).then(([tx, results]) => {
-    //                 resolve(results);
-    //             }).catch(err => {
-    //                 console.log("add error")
-    //             })
-    //         }).then((result) => {
-    //             closeDatabase(db);
-    //         }).catch(err => {
-    //             closeDatabase(db);
-    //         })
-    //     })
-    // });
+export const addProduct = async (id, type, item) => {
+    try {
+        let listItems = await AsyncStorage.getItem('favourite')
+        listItems = listItems ? JSON.parse(listItems) : {}
+        listItems[`${id}-${type}`] = {
+            id,
+            type,
+            item
+        }
+        await AsyncStorage.setItem('favourite', JSON.stringify(listItems))
+        return listItems
+    } catch (err) {
+        Alert.alert('Something went wrong. Try again.')
+    }
 }
 
 //Remove from favorite lit
 
-export const deleteProduct = (id, type) => {
-    // return new Promise((resolve) => {
-    //     createTable().then((db) => {
-    //         db.transaction((tx) => {
-    //             tx.executeSql('DELETE FROM favorite WHERE id = ? AND type= ? ', [id, type]).then(([tx, results]) => {
-    //                 resolve(results);
-    //             }).catch(err => {
-    //                 console.log("delete error")
-    //             })
-    //         }).then((result) => {
-    //             closeDatabase(db);
-    //         }).catch(err => {
-    //             closeDatabase(db);
-    //         })
-    //     })
-    // });
+export const deleteProduct = async (id, type) => {
+    try {
+        let listItems = await AsyncStorage.getItem('favourite')
+        listItems = listItems ? JSON.parse(listItems) : {}
+        if (listItems[`${id}-${type}`]) {
+            delete listItems[`${id}-${type}`]
+        }
+        await AsyncStorage.setItem('favourite', JSON.stringify(listItems))
+        return listItems
+    } catch (err) {
+        Alert.alert('Something went wrong. Try again.')
+    }
 }
 
 //Get product by id
 
-export const productById = (id, type) => {
-    // return new Promise((resolve, reject) => {
-    //     const products = [];
-    //     createTable().then((db) => {
-    //         db.transaction((tx) => {
-    //             tx.executeSql('SELECT * FROM favorite WHERE id = ? AND type= ? ', [id, type]).then(([tx, results]) => {
-    //                 var len = results.rows.length;
-    //                 for (let i = 0; i < len; i++) {
-    //                     let row = results.rows.item(i);
-    //                     const { id, item, type } = row;
-    //                     products.push({
-    //                         id,
-    //                         item,
-    //                         type
-    //                     });
-    //                 }
-    //                 resolve(products);
-    //             }).catch(err => {
-    //                 console.log("find error")
-    //             })
-    //         }).then((result) => {
-    //             closeDatabase(db);
-    //         }).catch(err => {
-    //             closeDatabase(db);
-    //         })
-    //     })
-    // });
+export const productById = async (id, type) => {
+    try {
+        let listItems = await AsyncStorage.getItem('favourite')
+        listItems = listItems ? JSON.parse(listItems) : {}
+        if (listItems[`${id}-${type}`]) {
+            return listItems[`${id}-${type}`]
+        }
+        return null
+    } catch (err) {
+        Alert.alert('Something went wrong. Try again.')
+    }
+}
+
+//Add the product to favorite
+
+export const addRating = async (id, type, rate) => {
+    try {
+        let listItems = await AsyncStorage.getItem('rating')
+        listItems = listItems ? JSON.parse(listItems) : {}
+        listItems[`${id}-${type}`] = rate
+        await AsyncStorage.setItem('rating', JSON.stringify(listItems))
+        return rate
+    } catch (err) {
+        Alert.alert('Something went wrong. Try again.')
+    }
+}
+//Get rating by id
+
+export const getRateById = async (id, type) => {
+    try {
+        let listItems = await AsyncStorage.getItem('rating')
+        listItems = listItems ? JSON.parse(listItems) : {}
+        if (listItems[`${id}-${type}`]) {
+            return listItems[`${id}-${type}`]
+        }
+        return null
+    } catch (err) {
+
+    }
 }

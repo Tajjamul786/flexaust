@@ -24,7 +24,7 @@ export default class FavoriteList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: []
+            data: {}
         }
     }
 
@@ -63,7 +63,7 @@ export default class FavoriteList extends Component {
                         }}
                     >
                         {
-                            this.state.data.map(item => {
+                            Object.values(this.state.data).map(item => {
                                 return (
                                     <FavoriteCard {...this.props} key={item.id} item={item} />
                                 )

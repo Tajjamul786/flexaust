@@ -39,17 +39,17 @@ export default class ProDetailAction extends Component {
         //Check if the product is in favorite
 
         let { prodID } = this.props
-        // if (prodID !== "") {
-        //     productById(prodID, "product").then(res => {
-        //         if (res !== undefined && res.length > 0) {
-        //             this.setState({ ...this.state, favorite: true })
-        //         } else {
-        //             this.setState({ ...this.state, favorite: false })
-        //         }
-        //     }).catch(err => {
-        this.setState({ ...this.state, favorite: false })
-        //     })
-        // }
+        if (prodID !== "") {
+            productById(prodID, "product").then(res => {
+                if (res) {
+                    this.setState({ ...this.state, favorite: true })
+                } else {
+                    this.setState({ ...this.state, favorite: false })
+                }
+            }).catch(err => {
+                this.setState({ ...this.state, favorite: false })
+            })
+        }
 
     }
     //Map the data

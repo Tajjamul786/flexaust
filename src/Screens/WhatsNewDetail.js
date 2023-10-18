@@ -29,7 +29,7 @@ import { decodeHtml, decodeDate } from '../Config/CommonFunctions';
 import { WEBURL } from "../Config/config";
 import HTMLView from 'react-native-htmlview';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
-import { addProduct, productById, deleteProduct } from '../Config/DataBase';
+import { addProduct, productById, deleteProduct, getRateById, addRating } from '../Config/DataBase';
 import Images, { LargeImages } from '../Components/shared/Images';
 
 export default class WhatsNewDetail extends Component {
@@ -62,16 +62,21 @@ export default class WhatsNewDetail extends Component {
                 x: 0,
                 animated: true,
             });
+            getRateById(item["Post ID"], "article").then(rate => {
+                if (rate) {
+                    this.setState({ ...this.state, rating: rate })
+                }
+            })
             //check if the product is favorite
-            // productById(item["Post ID"], "article").then(res => {
-            //     if (res !== undefined && res.length > 0) {
-            //         this.setState({ ...this.state, favorite: true })
-            //     } else {
-            this.setState({ ...this.state, favorite: false })
-            //     }
-            // }).catch(err => {
-            //     this.setState({ ...this.state, favorite: false })
-            // })
+            productById(item["Post ID"], "article").then(res => {
+                if (res) {
+                    this.setState({ ...this.state, favorite: true })
+                } else {
+                    this.setState({ ...this.state, favorite: false })
+                }
+            }).catch(err => {
+                this.setState({ ...this.state, favorite: false })
+            })
         })
     }
     // Change View on changing orientation
@@ -127,6 +132,7 @@ export default class WhatsNewDetail extends Component {
     //Show the rating of the function
 
     showRating() {
+        const { item } = this.props.route.params
         const { rating } = this.state;
         let stars = 5;
         let element = []
@@ -134,7 +140,10 @@ export default class WhatsNewDetail extends Component {
             if (rating <= stars && i <= rating) {
                 element.push(
                     <TouchableWithoutFeedback key={i}
-                        onPress={() => { this.setState({ rating: i }) }}
+                        onPress={() => {
+                            addRating(item["Post ID"], "article", i)
+                            this.setState({ rating: i })
+                        }}
                     >
                         <Image
                             source={require('../assets/images/detail/icon-star-yellow.png')}
@@ -149,7 +158,10 @@ export default class WhatsNewDetail extends Component {
             } else {
                 element.push(
                     <TouchableWithoutFeedback key={i}
-                        onPress={() => { this.setState({ rating: i }) }}
+                        onPress={() => {
+                            addRating(item["Post ID"], "article", i)
+                            this.setState({ rating: i })
+                        }}
                     >
                         <Image
                             source={require('../assets/images/detail/icon-star-gray.png')} style={{

@@ -95,6 +95,7 @@ export default class FavoriteCard extends Component {
             },
             cardText: {
                 fontSize: 14,
+                color:"#000000",
                 lineHeight: 20
             },
             TitleHeading: {
@@ -107,7 +108,7 @@ export default class FavoriteCard extends Component {
             prodHtmlPara: {
                 fontSize: paraFontSize,
                 lineHeight: lineHeight,
-
+                color:"#000000",
                 marginTop: 5,
                 paddingBottom: 20,
                 paddingRight: prodHtmlParaPaddingRight
