@@ -34,8 +34,7 @@ export default class ProductContext extends Component {
             .then(res => {
                 this.setState({ products: res.data.products })
             }).catch(err => {
-                console.log(err)
-                alert('Products did not load')
+                // alert('Products did not load')
             })
     }
 

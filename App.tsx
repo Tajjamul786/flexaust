@@ -25,11 +25,11 @@ const App = () => {
 
   return (
 
-    <ProductContext>
-      <ErrorBoundary FallbackComponent={CustomFallback as any}>
+    <ErrorBoundary FallbackComponent={CustomFallback as any}>
+      <ProductContext>
         <NavigationScreens />
-      </ErrorBoundary>
-    </ProductContext>
+      </ProductContext>
+    </ErrorBoundary>
   );
 };
 
