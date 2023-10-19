@@ -5,7 +5,6 @@
  *
  * @summary Favorite Products Card
  * @author Tajjamul <tajzuman786@gmail.com>
-
  */
 
 import React, { Component } from 'react';
