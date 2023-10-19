@@ -5,10 +5,8 @@
  * fetch the product by the Context API according to the keyword
  *
  * @summary search Screen
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
+ * @author Tajjamul <tajzuman786@gmail.com>
  *
- * Created at     : 2020-09-16 13:40:10 
- * Last modified  : 2020-10-02 11:53:10
  */
 
 import React, { Component } from 'react';

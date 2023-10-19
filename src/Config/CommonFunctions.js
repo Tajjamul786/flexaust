@@ -4,10 +4,8 @@
  * This file is like helping funtion of the application
  *
  * @summary helping functions
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
+ * @author Tajjamul <tajzuman786@gmail.com>
  *
- * Created at     : 2020-09-16 16:10:26 
- * Last modified  : 2020-10-02 11:42:16
  */
 
 

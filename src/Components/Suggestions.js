@@ -4,10 +4,8 @@
  * This file is Optional file to show suggestions while typing into search bar
  *
  * @summary Search suggestions
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
+ * @author Tajjamul <tajzuman786@gmail.com>
  *
- * Created at     : 2020-09-15 16:10:26 
- * Last modified  : 2020-10-02 11:36:16
  */
 
 import React, { Component } from 'react';

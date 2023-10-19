@@ -4,10 +4,8 @@
  * This files is used by the Product detail screen to show the features of products
  *
  * @summary Product Features
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
+ * @author Tajjamul <tajzuman786@gmail.com>
  *
- * Created at     : 2020-09-03 04:21:50 
- * Last modified  : 2020-10-02 11:22:26
  */
 
 import React, { Component, createRef } from 'react';

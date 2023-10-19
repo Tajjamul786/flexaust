@@ -5,10 +5,8 @@
  * This file handles the list of the market applications product 
  *
  * @summary Market application of the product
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
+ * @author Tajjamul <tajzuman786@gmail.com>
  *
- * Created at     : 2020-09-02 03:21:50 
- * Last modified  : 2020-10-02 11:20:56
  */
 
 import React, { Component } from 'react';

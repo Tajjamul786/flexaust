@@ -5,10 +5,8 @@
  * It uses SQLite
  *
  * @summary Database
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
+ * @author Tajjamul <tajzuman786@gmail.com>
  *
- * Created at     : 2020-09-17 15:11:22 
- * Last modified  : 2020-10-02 11:43:16
  */
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Alert } from "react-native";

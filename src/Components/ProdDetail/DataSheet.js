@@ -5,10 +5,8 @@
  * This file handles the view of pdf datasheet of product 
  *
  * @summary View pdf file of the product
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
+ * @author Tajjamul <tajzuman786@gmail.com>
  *
- * Created at     : 2020-09-02 02:21:56 
- * Last modified  : 2020-10-02 11:19:30
  */
 
 import React, { Component } from 'react';

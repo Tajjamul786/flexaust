@@ -4,10 +4,8 @@
  * Home Screen
  *
  * @summary Home Screen
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
+ * @author Tajjamul <tajzuman786@gmail.com>
  *
- * Created at     : 2020-09-01 12:20:20 
- * Last modified  : 2020-10-02 11:50:30
  */
 
 import React, { Component } from 'react';

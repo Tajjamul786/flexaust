@@ -4,10 +4,8 @@
  * This files is used to handle favorite products listing cards view
  *
  * @summary Favorite Products Card
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
- *
- * Created at     : 2020-09-04 14:12:18 
- * Last modified  : 2020-10-02 11:28:16
+ * @author Tajjamul <tajzuman786@gmail.com>
+
  */
 
 import React, { Component } from 'react';
@@ -95,7 +93,7 @@ export default class FavoriteCard extends Component {
             },
             cardText: {
                 fontSize: 14,
-                color:"#000000",
+                color: "#000000",
                 lineHeight: 20
             },
             TitleHeading: {
@@ -108,7 +106,7 @@ export default class FavoriteCard extends Component {
             prodHtmlPara: {
                 fontSize: paraFontSize,
                 lineHeight: lineHeight,
-                color:"#000000",
+                color: "#000000",
                 marginTop: 5,
                 paddingBottom: 20,
                 paddingRight: prodHtmlParaPaddingRight
@@ -187,14 +185,24 @@ export default class FavoriteCard extends Component {
                 }}
             >
                 <View style={cardStyles.container}>
-                    {
-                        imageUrl !== "" ?
-                            <Image
-                                style={cardStyles.prodImage}
-                                source={{ uri: imageUrl }}
-                            />
-                            : <></>
-                    }
+                    <View style={{
+                        height: imageHeight,
+                        width: imageHeight,
+                        backgroundColor: "#cccccc",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center"
+                    }}>
+                        {
+                            imageUrl ?
+                                <Image
+                                    source={{ uri: imageUrl }}
+                                    style={cardStyles.prodImage}
+                                /> :
+                                <Text style={{ fontSize: 12, color: "#ffffff92", fontSize: headingFontSize }}>No Image</Text>
+                        }
+                    </View>
+
 
                     <View style={cardStyles.cardDetail}>
                         <HTMLView value={`<p>${Name}</p>`}

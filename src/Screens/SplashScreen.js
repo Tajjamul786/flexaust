@@ -4,10 +4,8 @@
  * Splash Screen
  *
  * @summary Splash Screen
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
+ * @author Tajjamul <tajzuman786@gmail.com>
  *
- * Created at     : 2020-09-04 15:33:13 
- * Last modified  : 2020-10-02 11:58:13
  */
 
 import React, { Component } from 'react';

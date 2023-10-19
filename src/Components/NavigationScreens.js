@@ -4,10 +4,8 @@
  * This files is used to handle navigation type and screens 
  *
  * @summary Navigation type and screens
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
+ * @author Tajjamul <tajzuman786@gmail.com>
  *
- * Created at     : 2020-09-02 14:15:20 
- * Last modified  : 2020-10-02 11:30:18
  */
 
 import React from 'react';

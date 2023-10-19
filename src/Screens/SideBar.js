@@ -5,10 +5,8 @@
  * Shows the sidebar menu contents
  *
  * @summary Sidebar
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
+ * @author Tajjamul <tajzuman786@gmail.com>
  *
- * Created at     : 2020-09-10 14:30:10 
- * Last modified  : 2020-10-02 11:55:10
  */
 
 import React, { Component } from 'react';

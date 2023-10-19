@@ -6,10 +6,8 @@
  * this is basic file of the application 
  *
  * @summary Product Context API
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
+ * @author Tajjamul <tajzuman786@gmail.com>
  *
- * Created at     : 2020-09-11 13:10:26 
- * Last modified  : 2020-10-02 11:35:16
  */
 
 import React, { createContext, Component } from 'react';

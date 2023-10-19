@@ -4,10 +4,8 @@
  * This file is used to handle What's New Cards 
  *
  * @summary What's New Card
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
+ * @author Tajjamul <tajzuman786@gmail.com>
  *
- * Created at     : 2020-09-08 15:17:26 
- * Last modified  : 2020-10-02 11:32:28
  */
 
 import React, { Component } from 'react';

@@ -5,10 +5,8 @@
  * This component is used by mobile screen
  *
  * @summary Product Summary and Image on mobile
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
+ * @author Tajjamul <tajzuman786@gmail.com>
  *
- * Created at     : 2020-09-03 03:21:50 
- * Last modified  : 2020-10-02 11:21:56
  */
 
 import React, { Component } from 'react';

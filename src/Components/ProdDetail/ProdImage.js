@@ -4,10 +4,8 @@
  * This files is used by the Product detail screen to show the product Image
  *
  * @summary Product Image
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
+ * @author Tajjamul <tajzuman786@gmail.com>
  *
- * Created at     : 2020-09-04 13:21:50 
- * Last modified  : 2020-10-02 12:22:26
  */
 
 import React from 'react';

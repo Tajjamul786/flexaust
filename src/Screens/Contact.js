@@ -4,10 +4,8 @@
  * Contact Us screen
  *
  * @summary Contact us
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
+ * @author Tajjamul <tajzuman786@gmail.com>
  *
- * Created at     : 2020-09-18 16:19:24 
- * Last modified  : 2020-10-02 11:48:17
  */
 
 

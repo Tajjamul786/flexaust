@@ -4,10 +4,8 @@
  * This files is used to handle header of the application 
  *
  * @summary Application header
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
+ * @author Tajjamul <tajzuman786@gmail.com>
  *
- * Created at     : 2020-09-06 14:13:20 
- * Last modified  : 2020-10-02 11:29:18
  */
 
 import React, { Component } from 'react';

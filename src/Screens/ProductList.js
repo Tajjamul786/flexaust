@@ -5,10 +5,8 @@
  * fetch the product by the Context API
  *
  * @summary Product listing
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
+ * @author Tajjamul <tajzuman786@gmail.com>
  *
- * Created at     : 2020-09-20 12:30:10 
- * Last modified  : 2020-10-02 11:51:40
  */
 
 import React, { Component, createRef } from 'react';

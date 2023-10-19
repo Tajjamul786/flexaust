@@ -5,10 +5,8 @@
  * it shows data from local storage by using Database file
  *
  * @summary Favorite list
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
+ * @author Tajjamul <tajzuman786@gmail.com>
  *
- * Created at     : 2020-09-20 17:14:26 
- * Last modified  : 2020-10-02 11:49:16
  */
 
 import React, { Component } from 'react';

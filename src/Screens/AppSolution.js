@@ -4,10 +4,8 @@
  * This file shows the application solution screen
  *
  * @summary Application Solution
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
+ * @author Tajjamul <tajzuman786@gmail.com>
  *
- * Created at     : 2020-09-17 17:11:25 
- * Last modified  : 2020-10-02 11:47:10
  */
 
 

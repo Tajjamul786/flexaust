@@ -4,10 +4,8 @@
  * This file is used to handle the actions at the bottom of the product detail screen 
  *
  * @summary Product Actions
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
+ * @author Tajjamul <tajzuman786@gmail.com>
  *
- * Created at     : 2020-09-09 16:10:16 
- * Last modified  : 2020-10-02 11:32:56
  */
 
 import React, { Component } from 'react';

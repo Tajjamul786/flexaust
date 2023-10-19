@@ -5,10 +5,8 @@
  * Shows the data pass to the screen in the props
  *
  * @summary Whats New
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
+ * @author Tajjamul <tajzuman786@gmail.com>
  *
- * Created at     : 2020-09-14 16:40:19 
- * Last modified  : 2020-10-02 11:58:17
  */
 
 import React, { Component, createRef } from 'react';

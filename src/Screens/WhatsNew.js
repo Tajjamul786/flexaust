@@ -5,10 +5,8 @@
  * fetch data from URL
  *
  * @summary Whats New
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
+ * @author Tajjamul <tajzuman786@gmail.com>
  *
- * Created at     : 2020-09-12 16:33:15 
- * Last modified  : 2020-10-02 11:57:16
  */
 
 import React, { Component } from 'react';

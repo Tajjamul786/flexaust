@@ -4,10 +4,8 @@
  * This files is used by the Product detail screen to show products Specifications
  *
  * @summary Product Specifications
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
+ * @author Tajjamul <tajzuman786@gmail.com>
  *
- * Created at     : 2020-09-03 13:20:10 
- * Last modified  : 2020-10-02 11:27:16
  */
 
 import React, { Component } from 'react';

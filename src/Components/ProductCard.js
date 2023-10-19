@@ -4,10 +4,8 @@
  * This file is used to handle the Products listing cards view 
  *
  * @summary Product Cards
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
+ * @author Tajjamul <tajzuman786@gmail.com>
  *
- * Created at     : 2020-09-10 12:10:16 
- * Last modified  : 2020-10-02 11:33:56
  */
 
 import React, { Component } from 'react';

@@ -5,10 +5,8 @@
  * Shows the data category wise
  *
  * @summary Find Products Screen
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
+ * @author Tajjamul <tajzuman786@gmail.com>
  *
- * Created at     : 2020-09-18 20:20:26 
- * Last modified  : 2020-10-02 11:50:20
  */
 
 

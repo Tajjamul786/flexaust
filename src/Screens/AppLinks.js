@@ -4,10 +4,8 @@
  * This file handles all the links of the descriptions
  *
  * @summary Applications Links
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
+ * @author Tajjamul <tajzuman786@gmail.com>
  *
- * Created at     : 2020-09-16 16:19:26 
- * Last modified  : 2020-10-02 11:45:16
  */
 
 import React, { Component } from 'react';

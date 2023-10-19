@@ -4,10 +4,8 @@
  * This files is used to handle favorite products listing 
  *
  * @summary Favorite Products Listing
- * @author Tajjamul <tajjamul.zaman@nxb.com.pk>
- *
- * Created at     : 2020-09-04 14:12:20 
- * Last modified  : 2020-10-02 11:28:18
+ * @author Tajjamul <tajzuman786@gmail.com>
+
  */
 
 import React, { Component } from 'react';
